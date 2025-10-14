@@ -29,6 +29,10 @@ public class Produto extends DefaultEntity {
     private TipoTampa tipoTampa;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_marca", nullable = false)
+    private Marca marca;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_tipoIsolamento", nullable = false)
     private TipoIsolamento tipoIsolamento;
 
@@ -43,6 +47,14 @@ public class Produto extends DefaultEntity {
             inverseJoinColumns = @JoinColumn(name = "id_cor")
     )
     private Set<Cor> cores;
+
+    public Marca getMarca() {
+        return marca;
+    }
+
+    public void setMarca(Marca marca) {
+        this.marca = marca;
+    }
 
     public String getNome() {
         return nome;
