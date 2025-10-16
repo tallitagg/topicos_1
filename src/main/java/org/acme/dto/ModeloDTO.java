@@ -8,7 +8,7 @@ public record ModeloDTO(
         String nome,
 
         @Positive
-        Integer deslocamento,
+        Integer anoLancamento,
 
-        Long marcaID
+        Long marcaId
 ) {}

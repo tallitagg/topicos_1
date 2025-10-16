@@ -6,10 +6,10 @@ import jakarta.persistence.*;
 @Table(name = "modelo")
 public class Modelo extends DefaultEntity{
 
-    @Column(nullable = false)
+    @Column(name = "nome",nullable = false)
     private String nome;
 
-    @Column
+    @Column(name = "anoLancamento")
     private Integer anoLancamento;
 
     @ManyToOne(fetch = FetchType.LAZY)

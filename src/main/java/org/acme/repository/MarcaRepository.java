@@ -10,7 +10,12 @@ import java.util.List;
 public class MarcaRepository implements PanacheRepository<Marca> {
 
     public List<Marca> findByNome(String nome) {
-        return find("UPPER(nome) LIKE ?1", "%" + nome.toUpperCase() + "%").list();
+        return find("""
+        select distinct m
+        from Marca m
+        left join fetch m.modelos
+        where upper(m.nome) like ?1
+    """, "%" + nome.toUpperCase() + "%").list();
     }
 
 }

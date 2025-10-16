@@ -1,9 +1,6 @@
 package org.acme.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.util.List;
 
@@ -13,7 +10,7 @@ public class Marca extends DefaultEntity {
     @Column(nullable = false, unique = true)
     private String nome;
 
-    @OneToMany(mappedBy = "marca")
+    @OneToMany(mappedBy = "marca", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Modelo> modelos;
 
     public String getNome() {

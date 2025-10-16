@@ -13,8 +13,4 @@ public class CorRepository implements PanacheRepository<Cor> {
         return find("UPPER(nome) LIKE ?1", "%" + nome.toUpperCase() + "%").list();
     }
 
-    public Cor findByCodigoHex(String codigoHex) {
-        return find("UPPER(codigoHex) LIKE ?1", "%" + codigoHex.toUpperCase() + "%").firstResult();
-    }
-
 }

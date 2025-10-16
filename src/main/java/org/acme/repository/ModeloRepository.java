@@ -17,4 +17,8 @@ public class ModeloRepository implements PanacheRepository<Modelo> {
         return find("UPPER(marca.nome) LIKE ?1", "%" + nomeMarca.toUpperCase() + "%").list();
     }
 
+    public List<Modelo> findByAnoLancamento(Integer anoLancamento) {
+        return find("anoLancamento = ?1", anoLancamento).list();
+    }
+
 }
