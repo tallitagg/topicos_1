@@ -10,7 +10,7 @@ public class Marca extends DefaultEntity {
     @Column(nullable = false, unique = true)
     private String nome;
 
-    @OneToMany(mappedBy = "marca", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "marca", cascade = CascadeType.ALL)
     private List<Modelo> modelos;
 
     public String getNome() {

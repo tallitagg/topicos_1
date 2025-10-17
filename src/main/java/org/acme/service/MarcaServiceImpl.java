@@ -68,27 +68,44 @@ public class MarcaServiceImpl implements MarcaService {
     @Override
     @Transactional
     public void update(Long id, MarcaDTO dto) {
-        var marca = marcaRepository.findById(id);
+        Marca marca = marcaRepository.findById(id);
         if (marca == null) throw new IllegalArgumentException("Marca não encontrada: " + id);
 
         marca.setNome(dto.nome());
 
-        if (dto.modeloIds() != null) {
-            List<Modelo> managed = marca.getModelos();
-            for (Modelo m : managed) {
-                m.setMarca(null);
-            }
-            managed.clear();
+        if (dto.modeloIds() == null) return;
 
-            if (!dto.modeloIds().isEmpty()) {
-                var novosModelos = modeloRepository.find("id in ?1", dto.modeloIds()).list();
-                for (Modelo m : novosModelos) {
-                    m.setMarca(marca);
-                }
-                managed.addAll(novosModelos);
+        var atuais = new java.util.HashMap<Long, Modelo>();
+        if (marca.getModelos() != null) {
+            for (Modelo m : marca.getModelos()) {
+                atuais.put(m.getId(), m);
             }
         }
+
+        var desejados = dto.modeloIds().isEmpty()
+                ? java.util.Collections.<Modelo>emptyList()
+                : modeloRepository.find("id in ?1", dto.modeloIds()).list();
+
+        for (Modelo m : desejados) {
+            if (!atuais.containsKey(m.getId())) {
+                m.setMarca(marca);
+                marca.getModelos().add(m);
+            } else {
+                atuais.remove(m.getId());
+            }
+        }
+
+        for (Modelo mRemovido : atuais.values()) {
+            long qtdProdutos = 0L;
+            if (qtdProdutos > 0) {
+                throw new jakarta.ws.rs.WebApplicationException(
+                        "Não é possível remover o modelo '" + mRemovido.getNome()
+                                + "' da marca porque há produtos vinculados (" + qtdProdutos + ").", 409);
+            }
+            marca.getModelos().remove(mRemovido);
+        }
     }
+
 
     @Override
     @Transactional
