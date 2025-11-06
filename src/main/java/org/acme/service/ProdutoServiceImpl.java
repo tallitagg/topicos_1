@@ -45,7 +45,12 @@ public class ProdutoServiceImpl implements ProdutoService {
 
     @Override
     public ProdutoResponseDTO findById(Long id) {
-        return ProdutoResponseDTO.valueOf(produtoRepository.findById(id));
+        Produto produto = produtoRepository.findById(id);
+
+        if (produto == null)
+            return null;
+
+        return ProdutoResponseDTO.valueOf(produto);
     }
 
     @Override

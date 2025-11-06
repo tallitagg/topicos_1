@@ -26,7 +26,13 @@ public class TipoIsolamentoServiceImpl implements TipoIsolamentoService {
 
     @Override
     public TipoIsolamentoResponseDTO findById(Long id) {
-        return TipoIsolamentoResponseDTO.valueOf(tipoIsolamentoRepository.findById(id));
+
+        TipoIsolamento tipoIsolamento = tipoIsolamentoRepository.findById(id);
+
+        if (tipoIsolamento == null)
+            return null;
+
+        return TipoIsolamentoResponseDTO.valueOf(tipoIsolamento);
     }
 
     @Override

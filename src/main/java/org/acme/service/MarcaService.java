@@ -2,7 +2,6 @@ package org.acme.service;
 
 import org.acme.dto.MarcaDTO;
 import org.acme.dto.MarcaResponseDTO;
-import org.acme.model.Marca;
 
 import java.util.List;
 

@@ -1,9 +1,7 @@
 package org.acme.dto;
 
 import org.acme.model.Marca;
-import org.acme.model.Modelo;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public record MarcaResponseDTO(

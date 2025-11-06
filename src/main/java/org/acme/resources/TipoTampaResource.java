@@ -5,7 +5,6 @@ import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import org.acme.dto.TipoTampaDTO;
-import org.acme.service.TipoIsolamentoService;
 import org.acme.service.TipoTampaService;
 
 @Path("/tipoTampas")

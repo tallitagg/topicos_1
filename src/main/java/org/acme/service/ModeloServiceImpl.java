@@ -31,7 +31,12 @@ public class ModeloServiceImpl implements ModeloService {
 
     @Override
     public ModeloResponseDTO findById(Long id) {
-        return ModeloResponseDTO.valueOf(modeloRepository.findById(id));
+        Modelo modelo = modeloRepository.findById(id);
+
+        if (modelo == null)
+            return null;
+
+        return ModeloResponseDTO.valueOf(modelo);
     }
 
     @Override

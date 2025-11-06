@@ -20,14 +20,16 @@ VALUES ('ThermaX'),
        ('ArcticWave'),
        ('SteelFlow'),
        ('HeatShield'),
+       ('FreezeCool'),
        ('GlacierCup');
 
 INSERT INTO modelo (id_marca, nome, anolancamento)
 VALUES (7, 'Aqua Chill 500', 2023),
        (2, 'SteelCore 750', 2022),
+       (11, 'SteelCore 750', 2022),
        (9, 'Urban Flip 600', 2024),
        (3, 'Adventure 1L', 2021),
-       (10, 'Kids Pop 350', 2024),
+       (11, 'Kids Pop 350', 2024),
        (1, 'Sport Pro 700', 2023),
        (8, 'Minimal 500', 2025),
        (5, 'Office Slim 400', 2022),
@@ -40,7 +42,7 @@ VALUES (7, 'Aqua Chill 500', 2023),
        (9, 'Terra 700', 2021),
        (4, 'Pulse 480', 2023),
        (8, 'Eclipse 520', 2024),
-       (10, 'Horizon 750', 2020),
+       (11, 'Horizon 750', 2020),
        (6, 'Quantum 900', 2025),
        (5, 'Orbit 620', 2022),
        (2, 'Vertex 680', 2023),
@@ -91,7 +93,7 @@ VALUES ('Frost 500 Inox', 'Parede dupla a vácuo, ótima para academia', 149, 0.
        ('Trail Rugged 900', 'Texturizada, super resistente para trilhas', 189, 0.90, 7, 2, 7, 3, 2),
        ('Gourmet Infuser 600', 'Com infusor para chá e frutas, vedação premium', 159, 0.60, 8, 10, 8, 9, 4),
        ('Minimal 500', 'Design minimalista com acabamento fosco', 139, 0.50, 9, 3, 9, 1, 1),
-       ('Hydra 750', 'Bico retrátil esportivo, alta durabilidade', 169, 0.75, 10, 4, 10, 10, 2);
+       ('Hydra 750', 'Bico retrátil esportivo, alta durabilidade', 169, 0.75, 11, 4, 10, 10, 2);
 
 INSERT INTO produto_cor (id_cor, id_produto)
 VALUES (1, 1),

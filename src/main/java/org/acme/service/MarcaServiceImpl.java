@@ -40,7 +40,8 @@ public class MarcaServiceImpl implements MarcaService {
 
     @Override
     public MarcaResponseDTO findById(Long id) {
-        return MarcaResponseDTO.valueOf(marcaRepository.findById(id));
+        Marca marca = marcaRepository.findById(id);
+        return marca == null ? null : MarcaResponseDTO.valueOf(marca);
     }
 
     @Override

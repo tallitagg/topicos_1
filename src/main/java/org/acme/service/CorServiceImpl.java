@@ -34,7 +34,12 @@ public class CorServiceImpl implements CorService {
 
     @Override
     public CorResponseDTO findById(Long id) {
-        return CorResponseDTO.valueOf(corRepository.findById(id));
+        Cor cor = corRepository.findById(id);
+
+        if(cor == null)
+            return null;
+
+        return CorResponseDTO.valueOf(cor);
     }
 
     @Override

@@ -26,7 +26,12 @@ public class MaterialServiceImpl implements MaterialService {
 
     @Override
     public MaterialResponseDTO findById(Long id) {
-        return MaterialResponseDTO.valueOf(materialRepository.findById(id));
+        Material material = materialRepository.findById(id);
+
+        if (material == null)
+            return null;
+
+        return  MaterialResponseDTO.valueOf(material);
     }
 
     @Override

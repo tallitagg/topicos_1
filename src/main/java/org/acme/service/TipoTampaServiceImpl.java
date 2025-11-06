@@ -26,7 +26,11 @@ public class TipoTampaServiceImpl implements TipoTampaService {
 
     @Override
     public TipoTampaResponseDTO findById(Long id) {
-        return TipoTampaResponseDTO.valueOf(tipoTampaRepository.findById(id));
+        TipoTampa tipoTampa = tipoTampaRepository.findById(id);
+
+        if (tipoTampa == null)
+            return null;
+        return TipoTampaResponseDTO.valueOf(tipoTampa);
     }
 
     @Override
