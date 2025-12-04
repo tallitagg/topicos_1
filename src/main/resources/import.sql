@@ -106,3 +106,29 @@ VALUES (1, 1),
        (8, 8),
        (9, 9),
        (10, 10);
+
+INSERT INTO usuario (nome, login, senha, perfil)
+VALUES
+    -- 123
+    ('Administrador Geral', 'admin.geral',
+     '6wIlC05FYzn1zo5Nv2wzXDe3Z0EoCmZ9ww8SKmUoz7NU2l481ZGwuBpK1Sf3UfdNxlu+7w0uB+6ecWm9VB2lkQ==', 'ADM'),
+
+    -- 234
+    ('Administrador Operacional', 'admin.op',
+     '66mD3S6UQnt5RcI3glEOdYFJFVk7j4cPWARbmAktY+OuWGwOTLtkcJXoj2mAr6NEtAKJ8m/bxUpATama8tS/Xg==', 'ADM'),
+
+    -- 345
+    ('Administrador Suporte', 'admin.suporte',
+     'Iu6yCHd8x+Bf4A965tuVHho8cAwLexxcrcgo3m+EZxnOPIzg/+/ynfb88hnOe3pp99EXSt2FFpty+2sQ1FBg1g==', 'ADM'),
+
+    -- 456
+    ('João Silva', 'joao.silva',
+     '8j0iO/fjc1dP7z0uIlRkVdR4MO5FIKecLgcsytg/Evo58XdZWgvxpk1SeQHAZn6YRfLEEWc+9zYcpyGOelpnqQ==', 'USER'),
+
+    -- 567
+    ('Maria Santos', 'maria.santos',
+     'D7OMZ68p9EZQ2M0M64C2RlkzOFPnDv9sJVXD+2Yq+67o7yI2wA68xeMnelngne5RGR4wOJoW0oX0xDCZ/IbF0Q==', 'USER'),
+
+    -- 678
+    ('Ana Souza', 'ana.souza',
+     '6oJqeA9Ce6ad7aAYP2AKrW+BFE+cDdqW7r6v+m8muzvekCgwcko8xVZXSuL+UPOsIeKqxKRdCZwsbkEgGLqGrQ==', 'USER');

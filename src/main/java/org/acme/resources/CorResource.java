@@ -1,5 +1,6 @@
 package org.acme.resources;
 
+import jakarta.annotation.security.RolesAllowed;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
@@ -16,23 +17,27 @@ public class CorResource {
     CorService corService;
 
     @GET
+    @RolesAllowed({"USER", "ADM"})
     public Response buscarTodas() {
         return Response.ok(corService.findAll()).build();
     }
 
     @GET
     @Path("/{nome}")
+    @RolesAllowed({"USER", "ADM"})
     public Response buscarPorNome(@PathParam("nome") String nome) {
         return Response.ok(corService.findByName(nome)).build();
     }
 
     @POST
+    @RolesAllowed({"ADM"})
     public Response incluir(CorDTO dto) {
         return Response.status(Response.Status.CREATED).entity(corService.create(dto)).build();
     }
 
     @PUT
     @Path("/{id}")
+    @RolesAllowed({"ADM"})
     public Response alterar(@PathParam("id") Long id, CorDTO dto) {
         corService.update(id, dto);
         return Response.noContent().build();
@@ -40,6 +45,7 @@ public class CorResource {
 
     @DELETE
     @Path("/{id}")
+    @RolesAllowed({"ADM"})
     public Response excluir(@PathParam("id") Long id) {
         corService.delete(id);
         return Response.noContent().build();

@@ -1,5 +1,6 @@
 package org.acme.resources;
 
+import jakarta.annotation.security.RolesAllowed;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
@@ -16,28 +17,33 @@ public class TipoTampaResource {
     TipoTampaService tipoTampaService;
 
     @GET
+    @RolesAllowed({"USER","ADM"})
     public Response buscarTodos() {
         return Response.ok(tipoTampaService.findAll()).build();
     }
 
     @GET
+    @RolesAllowed({"USER","ADM"})
     @Path("/descricao/{descricao}")
     public Response buscarPorDescricao(@PathParam("descricao") String descricao) {
         return Response.ok(tipoTampaService.findByDescricao(descricao)).build();
     }
 
     @GET
+    @RolesAllowed({"USER","ADM"})
     @Path("/material/{material}")
     public Response buscarPorMaterial(@PathParam("material") String material) {
         return Response.ok(tipoTampaService.findByMaterial(material)).build();
     }
 
     @POST
+    @RolesAllowed({"ADM"})
     public Response incluir(TipoTampaDTO dto) {
         return Response.status(Response.Status.CREATED).entity(tipoTampaService.create(dto)).build();
     }
 
     @PUT
+    @RolesAllowed({"ADM"})
     @Path("/{id}")
     public Response atualizar(@PathParam("id") Long id, TipoTampaDTO dto) {
         tipoTampaService.update(id, dto);
@@ -45,6 +51,7 @@ public class TipoTampaResource {
     }
 
     @DELETE
+    @RolesAllowed({"ADM"})
     @Path("/{id}")
     public Response excluir(@PathParam("id") Long id) {
         tipoTampaService.delete(id);
