@@ -36,12 +36,12 @@ public class AuthResource {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
         }
 
-        Usuario usuario = usuarioService.findByLoginAndSenha(dto.login(), hash);
+        Usuario usuario = usuarioService.findByLoginAndSenha(dto.username(), hash);
 
         if (usuario == null)
             return Response.noContent().build();
 
-        String token = jwtService.generateJwt(usuario.getLogin(), usuario.getPerfil());
+        String token = jwtService.generateJwt(usuario.getUsername(), usuario.getPerfil());
 
         return Response.ok().header("Authorization", token).build();
 

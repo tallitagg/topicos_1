@@ -10,8 +10,10 @@ public class Usuario extends DefaultEntity{
 
     private String nome;
 
+    @Column(nullable = false, unique = true, name = "username")
+    private String username;
+
     @Column(unique = true)
-    private String login;
     private String senha;
 
     @Enumerated(EnumType.STRING)
@@ -22,12 +24,24 @@ public class Usuario extends DefaultEntity{
         return nome;
     }
 
-    public String getLogin() {
-        return login;
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getSenha() {
         return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 
     public Perfil getPerfil() {

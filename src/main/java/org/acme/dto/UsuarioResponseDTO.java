@@ -5,7 +5,8 @@ import org.acme.model.Usuario;
 
 public record UsuarioResponseDTO(
         Long id,
-        String login,
+        String username,
+        String nome,
         String senha,
         Perfil perfil
 ) {
@@ -14,7 +15,8 @@ public record UsuarioResponseDTO(
             return null;
         return new UsuarioResponseDTO(
                 usuario.getId(),
-                usuario.getLogin(),
+                usuario.getUsername(),
+                usuario.getNome(),
                 usuario.getSenha(),
                 usuario.getPerfil());
     }

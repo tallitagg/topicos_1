@@ -1,4 +1,9 @@
 package org.acme.service;
 
-public class CadastroBasicoService {
+import jakarta.validation.Valid;
+import org.acme.dto.CadastroBasicoDTO;
+import org.acme.dto.CadastroBasicoResponseDTO;
+
+public interface CadastroBasicoService {
+    public CadastroBasicoResponseDTO create(@Valid CadastroBasicoDTO dto);
 }

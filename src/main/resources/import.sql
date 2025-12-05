@@ -107,7 +107,7 @@ VALUES (1, 1),
        (9, 9),
        (10, 10);
 
-INSERT INTO usuario (nome, login, senha, perfil)
+INSERT INTO usuario (nome, username, senha, perfil)
 VALUES
     -- 123
     ('Administrador Geral', 'admin.geral',
