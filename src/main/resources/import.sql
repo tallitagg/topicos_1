@@ -83,17 +83,17 @@ VALUES ('Flip-top', 'PP/Tritan'),
        ('Infusor twist', 'Aço/Tritan');
 
 INSERT INTO produto
-(nome, descricao, preco, capacidade, id_modelo, id_tipotampa, id_marca, id_tipoisolamento, id_material)
-VALUES ('Frost 500 Inox', 'Parede dupla a vácuo, ótima para academia', 149, 0.50, 1, 1, 1, 1, 1),
-       ('Urban Flip 600', 'Tampa flip para uso urbano diário', 129, 0.60, 2, 1, 2, 2, 2),
-       ('Adventure 1L', 'Trava reforçada para trilha/camping', 199, 1.00, 3, 2, 3, 3, 1),
-       ('Kids Pop 350', 'Bico macio e alça infantil', 89, 0.35, 4, 9, 4, 4, 5),
-       ('Office Slim 400', 'Perfil fino, cabe no porta-copo', 119, 0.40, 5, 7, 5, 2, 3),
-       ('Sport Pro 700', 'Alta retenção térmica e performance', 179, 0.70, 6, 6, 6, 5, 1),
-       ('Trail Rugged 900', 'Texturizada, super resistente para trilhas', 189, 0.90, 7, 2, 7, 3, 2),
-       ('Gourmet Infuser 600', 'Com infusor para chá e frutas, vedação premium', 159, 0.60, 8, 10, 8, 9, 4),
-       ('Minimal 500', 'Design minimalista com acabamento fosco', 139, 0.50, 9, 3, 9, 1, 1),
-       ('Hydra 750', 'Bico retrátil esportivo, alta durabilidade', 169, 0.75, 11, 4, 10, 10, 2);
+(nome, descricao, preco, capacidade, estoque, id_modelo, id_tipotampa, id_marca, id_tipoisolamento, id_material)
+VALUES ('Frost 500 Inox', 'Parede dupla a vácuo, ótima para academia', 149, 0.50, 500, 1, 1, 1, 1, 1),
+       ('Urban Flip 600', 'Tampa flip para uso urbano diário', 129, 0.60, 530,2, 1, 2, 2, 2),
+       ('Adventure 1L', 'Trava reforçada para trilha/camping', 199, 1.00, 332, 3, 2, 3, 3, 1),
+       ('Kids Pop 350', 'Bico macio e alça infantil', 89, 0.35, 442, 3, 9, 4, 4, 5),
+       ('Office Slim 400', 'Perfil fino, cabe no porta-copo', 119, 0.40, 765, 5, 7, 5, 2, 3),
+       ('Sport Pro 700', 'Alta retenção térmica e performance', 179, 0.70, 534, 6, 6, 6, 5, 1),
+       ('Trail Rugged 900', 'Texturizada, super resistente para trilhas', 189, 0.90, 634, 7, 2, 7, 3, 2),
+       ('Gourmet Infuser 600', 'Com infusor para chá e frutas, vedação premium', 159, 0.60, 512, 8, 10, 8, 9, 4),
+       ('Minimal 500', 'Design minimalista com acabamento fosco', 139, 0.50, 523, 9, 3, 9, 1, 1),
+       ('Hydra 750', 'Bico retrátil esportivo, alta durabilidade', 169, 0.75, 523, 11, 4, 10, 10, 2);
 
 INSERT INTO produto_cor (id_cor, id_produto)
 VALUES (1, 1),

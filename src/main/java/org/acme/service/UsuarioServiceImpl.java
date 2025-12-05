@@ -21,13 +21,13 @@ public class UsuarioServiceImpl implements UsuarioService {
     @Override
     public Usuario findByLogin(String login) {
         return repository
-                .findByLogin(login);
+                .findByUsername(login);
     }
 
     @Override
     public Usuario findByLoginAndSenha(String login, String senha) {
         return repository
-                .findByLoginSenha(login, senha);
+                .findByUsernameSenha(login, senha);
     }
 
     @Override

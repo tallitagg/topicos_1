@@ -120,6 +120,7 @@ public class ProdutoServiceImpl implements ProdutoService {
         produto.setDescricao(dto.descricao());
         produto.setPreco(dto.preco());
         produto.setCapacidade(dto.capacidade());
+        produto.setEstoque(dto.estoque());
 
         produto.setMarca(marca);
         produto.setModelo(modelo);
@@ -146,6 +147,7 @@ public class ProdutoServiceImpl implements ProdutoService {
         produto.setDescricao(dto.descricao());
         produto.setPreco(dto.preco());           // Long
         produto.setCapacidade(dto.capacidade()); // Double
+        produto.setEstoque(dto.estoque());
 
         var marca = marcaRepository.findById(dto.marcaId());
 

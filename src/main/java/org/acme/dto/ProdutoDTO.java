@@ -10,8 +10,9 @@ import java.util.List;
 public record ProdutoDTO(
         @NotBlank String nome,
         String descricao,
-        @NotNull @PositiveOrZero Long preco,
+        @NotNull @PositiveOrZero Double preco,
         @NotNull @Positive Double capacidade,
+        @NotNull @Positive Integer estoque,
         @NotNull Long marcaId,
         @NotNull Long modeloId,
         @NotNull Long tipoTampaId,

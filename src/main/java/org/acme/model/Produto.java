@@ -14,11 +14,14 @@ public class Produto extends DefaultEntity {
     @Column(length = 1000)
     private String descricao;
 
-    @Column(precision = 15, scale = 2, nullable = false)
-    private Long preco;
+    @Column
+    private Double preco;
 
     @Column(nullable = false)
     private Double capacidade;
+
+    @Column(nullable = false)
+    private Integer Estoque;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_modelo", nullable = false)
@@ -56,6 +59,14 @@ public class Produto extends DefaultEntity {
         this.marca = marca;
     }
 
+    public Integer getEstoque() {
+        return Estoque;
+    }
+
+    public void setEstoque(Integer estoque) {
+        Estoque = estoque;
+    }
+
     public String getNome() {
         return nome;
     }
@@ -72,11 +83,11 @@ public class Produto extends DefaultEntity {
         this.descricao = descricao;
     }
 
-    public Long getPreco() {
+    public Double getPreco() {
         return preco;
     }
 
-    public void setPreco(Long preco) {
+    public void setPreco(Double preco) {
         this.preco = preco;
     }
 

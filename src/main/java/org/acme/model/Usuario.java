@@ -6,14 +6,14 @@ import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 
 @Entity
-public class Usuario extends DefaultEntity{
+public class Usuario extends DefaultEntity {
 
     private String nome;
 
-    @Column(nullable = false, unique = true, name = "username")
+    @Column(unique = true, nullable = false)
     private String username;
 
-    @Column(unique = true)
+    @Column(nullable = false)
     private String senha;
 
     @Enumerated(EnumType.STRING)

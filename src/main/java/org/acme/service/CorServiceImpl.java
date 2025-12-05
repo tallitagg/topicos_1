@@ -9,9 +9,12 @@ import org.acme.model.Cor;
 import org.acme.repository.CorRepository;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 @ApplicationScoped
 public class CorServiceImpl implements CorService {
+
+    private static final Logger LOGGER = Logger.getLogger(CorServiceImpl.class.getName());
 
     @Inject
     CorRepository corRepository;
